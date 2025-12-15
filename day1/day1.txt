@@ -1,0 +1,16 @@
+how to operate mysql
+1) using workbench
+2) mysql command line client
+3) mysql shell
+
+how to operate mysql shell
+1) open mysql shell
+2) \sql
+3) \c root@localhost:3306
+
+database queries
+ show databases;
+ create database dbname;
+ use dbname;
+ select database();
+ drop database dbname;

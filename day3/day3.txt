@@ -1,0 +1,97 @@
+ddl - data definition language
+it is used to deal with structure of the table and database
+
+create
+it is used to create the database, table ,user ,index and 
+views
+
+show
+it is used to display list of databases and tables
+
+desc
+it is used to display the description of a table
+
+alter
+it is used to modify the structure of a table
+
+drop
+it is used to delete the database, table and user
+
+truncate 
+it is used to clear the values of table but not a structure
+
+rename
+it is used to rename a table and table columns
+
+create query
+
+syntax
+create table tbname (col1 datatype1, col2 datatype ,col3 dt3);
+
+ex
+create table students (id int, name varchar(20), city varchar(20));
+
+desc query
+syntax
+desc tbname
+
+ex
+desc students;
+
+show query
+ex
+show tables;
+
+how to add a column
+syntax
+alter table tbname ADD column colname datatype;
+
+ex
+alter table students ADD COLUMN marks int;
+alter table students ADD COLUMN gender varchar(6);
+
+
+how to modify a column datatype
+syntax
+alter table tbname MODIFY COLUMN colname newdatatype
+
+ex
+alter table students MODIFY COLUMN phno char(10);
+
+how to delete a columns
+syntax
+alter table tbname DROP COLUMN colname
+
+ex
+alter table students DROP COLUMN marks;
+alter table students DROP COLUMN gender;
+
+rename query
+how to rename a column
+syntax
+alter table tbname RENAME COLUMN oldcol to newcol
+
+ex
+alter table students RENAME COLUMN id to std_id;
+alter table students RENAME COLUMN name to std_name;
+
+how to rename a table
+syntax
+alter table tbname rename to newname;
+
+ex
+alter table students rename to std;
+
+drop query
+syntax
+drop table tbname;
+
+ex
+drop table std;
+
+truncate
+syntax
+truncate table tbname
+
+ex
+truncate table students;

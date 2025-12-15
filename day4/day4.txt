@@ -1,0 +1,54 @@
+
+ddl - create alter drop truncate show desc
+
+dml - data manipulation language
+it is used to deal with the values of an table
+
+insert - it is used to insert a single or multiple rows
+in a table
+
+syntax
+insert into tbname (col1,col2,col3) values (val1,val2 ,val3);
+
+how to insert a row
+ex
+insert into products (id, name, price) values (1, 'laptop', 100000);
+
+how to insert a row values in few columns
+insert into products (id, name) values (3, 'charger');
+
+how to insert multiple records 
+insert into products (id,name,price) values (4,'usb ',400) , (5,'powerbank',900);
+
+
+update- it is useed to modify the existing records in a table
+
+syntax
+update tbname set  colname=newval where refcol=val;
+
+ex
+update products set price=3500 where  name='charger';
+update products set id=8 where name='printer';
+update products set price=10000 where id=8;
+
+
+delete 
+it is used to delete row records in a table
+
+delete  from tbname where refcol=values
+
+ex
+delete from products where id=7
+note:omitting where clause in delete - executes truncate query
+
+ 
+dql- data query language
+it is used to retreive the data from a table
+
+syntax
+select  * from tbname
+
+ex 
+select * from products;
+select name, price from products;
+select name as product_names, price as product_price from products;

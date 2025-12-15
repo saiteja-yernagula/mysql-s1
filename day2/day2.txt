@@ -1,0 +1,106 @@
+
+what is sql 
+dbms
+types of commands
+
+how to operate shell
+
+
+show databases;
+create database dbname;
+use dbname;
+select database();
+drop database dbname;
+
+
+datatypes
+1) varchar
+it is used to specify a variable length string
+
+syntax      size- max of no of characters
+columnname varchar(size)
+
+ex
+city varchar(20)
+
+varchar wont occupy memory for empty slots
+
+2) char
+it is used to specify a fixed length of string
+
+syntax 
+colname char(size)
+
+ex
+pincode char(6)
+
+char will occupy memory even the slot is  empty 
+
+3) int
+it is used to store whole numbers (postive and negative)
+but not decimals
+
+syntax
+colname int
+
+ex
+id int
+age int
+price int
+
+4) decimal 
+it is used to store the decimal values with a precision and scale
+
+18.95
+precision-4   total numbers
+scale- 2       numbers after decimal point
+
+syntax
+columnname decimal(precision,scale)
+
+ex
+rating decimal(2,1)
+
+5) boolean - it is used to store true or false but in 
+a format of 1 and 0
+
+syntax
+colname boolean
+
+ex
+feestatus boolean
+admin  boolean
+
+6) date - it is used to store the date in a format of 
+   YYYY-MM-DD
+   syntax
+   colname date
+   
+   ex
+   doj date
+   dob date
+course_completion_date date
+
+appointment datetime   ..... date + time
+year_of_passing year
+examination_month month
+last_login timestamp....it will store date and time automatically
+
+7) text
+it is used to store large content 
+
+syntax
+colname text
+
+ex
+content text
+description text
+
+
+
+
+
+
+
+
+
