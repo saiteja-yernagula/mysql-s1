@@ -1,0 +1,86 @@
+
+clauses
+it is used to filter , sort and limit the data
+
+where- we can use in select , update  and delete
+it is used to filter the records based on a condition
+select * from emp where job='manager';
+select * from emp where deptno=10;
+
+select - it is used to select the columns
+
+distinct - it is used to remove duplicate records
+select distinct(job) from emp;
+select distinct(deptno) from emp;
+
+order by - it is used to sort the records in asscending
+   and descending order
+select * from emp order by sal;--asscending
+select * from emp order by sal desc;--descending
+select * from emp order by deptno;
+select * from emp order by hiredate;
+
+limit - it is used to restrict the no of records
+select * from emp limit 5;
+
+highest sal
+select * from emp order by sal desc limit 1;
+
+offset - it is used to skip the no of records
+select * from emp  limit 10 offset 2;
+
+second highest salary
+select * from emp order by sal desc limit 1 offset 1;
+
+third highest salary
+select * from emp order by sal desc limit 1 offset 2;
+
+short hand
+select * from emp order by sal desc limit 2,1 ;
+
+group by
+it is used to divide the records as a group which is having
+same values for applying aggregatng functions
+
+select deptno,count(sal) from emp group by deptno;
+
+note - we cannot mention non aggregated and non grouped
+ select deptno,count(*),ename from emp group by deptno;
+
+multiple group by
+ select deptno,job,count(*) from emp group by deptno,job;
+
+having
+
+aggregating function (multi row functions)
+which takes multiple rows as input and returns single value
+and it is used to perform mathemical calculations
+
+sum(colname)
+select sum(sal) from emp;
+
+max(column)
+select max(sal) from emp;
+
+min(column)
+select min(sal) from emp;
+
+avg(column)
+select avg(sal) from emp;
+
+count(column)
+selct count(job) from emp;
+
+multiple aggregating functions
+select max(sal) as highest,min(sal),avg(sal) from emp;
+
+note- 
+aggregating function ignore null values
+select count(comm) from emp;//4
+select count(*) from emp;//14 - * will include null and non null
+
+we cannot mention non aggregated column with aggregated function
+select max(sal),ename from emp;
+
+single row functions
+which takes multiple rows as input and reuturn multiple values
