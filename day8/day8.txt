@@ -1,0 +1,45 @@
+single row functions
+operates on each row it return one result per 
+one row
+
+10 rows--->10 values
+2 rows---> 2 values
+
+strings
+1) length - it returns no of characters in a string
+select ename, length(ename) from emp;
+
+2) upper- it converts the column into uppercase
+3) lower- it converts the column into lowercase
+select ename,upper(ename), lower(ename ) from emp;
+
+4) substr(col,startingind, length) -
+it is used to slice out an portion of a string
+note - index starts from 1
+select ename, substr(ename,1,3) from emp;
+
+5) concat 
+it is used to merge two or more columns with a string
+select ename, concat('mr ', ename , " - ",job) frome emp;
+
+number functions
+ceil()- round up a number upto the next largest integer
+floor()-round down a number upto the next smallest integer
+round()-round off a number based on nearest integer
+select sal,ceil(sal), floor(sal), round(sal) from emp;
+
+date functions
+year(date)- it is used to extract a year from a date
+month(date)- it is used to extract a month from a date
+day(date)- it is used to extract a day from a date
+select hiredate, year(hiredate),month(hiredate),day(hiredate) from emp;
+
+select curdate();//returns the present date
+select curtime();//returns the present time
+
+hour(curtime());//extract a hour from a time
+minute(curtime());//extract a minute from a time
+second(curtime());//extract a second from a time
+
+datediff(curdate(),hiredate)//returns the difference in a days
+select ename , datediff(curdate(),hiredate) from emp;

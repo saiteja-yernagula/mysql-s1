@@ -10,7 +10,6 @@ group by
 having
 
 
-
 Count employees in each department
 select deptno,count(*) from emp group by deptno;
 Find average salary per department
@@ -50,12 +49,10 @@ we can where but it should apply before group by
            where job<>'clerk' group by job ;
 
 
-Count employees in each department
-         except department 30
+Count employees in each department except department 30
 select deptno ,count(*) from emp where deptno<>30 group by deptno;
 
-Find average salary of SALESMAN
-             in each department
+Find average salary of SALESMAN in each department
 select deptno,avg(sal) from emp where job='salesman' group by deptno;
 
 
