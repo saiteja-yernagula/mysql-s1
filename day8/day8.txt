@@ -43,3 +43,10 @@ second(curtime());//extract a second from a time
 
 datediff(curdate(),hiredate)//returns the difference in a days
 select ename , datediff(curdate(),hiredate) from emp;
+
+
+find the student who have taken python
+find the students who are training under anitha
+find the count of no of students in each course
+find the trainer who has maximum enrolled students
+find the total fees of every trainer based on total student under his course

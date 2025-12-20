@@ -1,0 +1,76 @@
+
+constraints
+Constraints are the rules applied to table columns to 
+enforce data integrity.
+create table tbname (col1 dtyp constraint,col2 dtype constraint)
+
+not null
+Ensures that a column cannot have a NULL value.
+create table std (id int, name varchar(20) not null);
+insert into std (id,name) values (1,'john');//inserted
+insert into std (id) values (3);//error
+
+check
+ Ensures that the values in a column meet a specified condition.
+ex :check age between 20 and 30
+    check status in ('active','inactive,pending)
+
+alter table std add column age int check(age>18);
+insert into std (id,name,age) values (1,'jessy',23);//inserted
+insert into std (id,name,age) values (1,'jessy',10);//error
+
+unique
+Ensures all values in a column are unique and allows null values.
+ex:
+adharno int unique;
+acno int unique;
+passportid int unique;
+
+create table std (id int,name varchar(20), passportid int unique);
+insert into std values (1,'john',1892);//inserted
+insert into std values (1,'john',1342);//inserted
+insert into std values (1,'john',null);//inserted
+insert into std values (1,'john',1342);//error
+insert into std values (1,'john',1892);//error
+
+default
+Sets a default value for a column if no value is specified.
+
+ex
+country default 'india';
+company default 'vector';
+status default 'active';
+
+alter table std add column country varchar(20) default 'india';
+insert into std values (1,'john',134,'us');//us inserted
+insert into std (id,name,passportid) values (1,'john',13);//india
+
+primary key (unique + not null)
+ Uniquely identifies each row in a table.
+
+create table std (id int primary key,name varchar(20),city varchar(20));
+insert into std (id,name,city) values (1,'john','hyd');//inserted
+insert into std (id,name,city) values (2,'jessy','hyd');//inserted
+insert into std (id,name,city) values (2,'jessy','hyd');//error
+insert into std (id,name,city) values (null,'jessy','hyd');
+
+auto_increment
+Automatically generates a unique value for each row.
+
+create table std (id int primary key auto_increment,name varchar(20));
+
+insert into std (id,name) values (1,'john');
+insert into std (name) values ('jessy');//2
+insert into std (name) values ('jessy');//3
+insert into std (id,name) values (10,'jack');//10
+insert into std (name) values ('jack');//11
+
+set @@auto_increment_increment=5;
+insert into std (name) values ('jack');--16
+insert into std (name) values ('jack');--21
+
+
+
+
+
+
