@@ -1,0 +1,54 @@
+
+ FOREIGN KEY
+Purpose: Ensures referential integrity by linking two tables.
+Note: The referenced table should have a PRIMARY KEY.
+Foreign Key column can have duplicates and NULL values.
+Parent table: The table with a PRIMARY KEY. and foreign key 
+Child table: The table with the PRIMARY KEY.
+
+note : we cannot drop child table without dropping parent table
+
+//child table structure
+create table emp (deptno int primary key, dname varchar(20)
+                         , location varchar(20));
+insert into emp values (101,’hr’,’delhi’),
+                            (102,’sales’,’bangalore’);
+
+//parent table
+create table dept (empno int primary key, ename varchar(20), 
+    deptno int, foreign key(deptno) references emp(deptno));
+
+insert into dept values (1001,'sahil',101)
+                          ,(1004,'kavish',102);//inserted
+
+insert into dept  values (1,'john',102);//inserted 
+insert into dept  values (1,'john',104);//throws error
+
+insert into emp values (104,'sales','hyd');//child-inserted
+insert into dept  values (10028,'john',104) ;//parent-inserted
+
+drop table emp;//throws error
+drop table dept;//inserted
+drop table emp;//inserted
+
+
+joins
+
+inner join
+syntax
+
+select * from emp e right join dept d on e.deptno=d.deptno
+union
+select * from dept d left join emp e on e.deptno=d.deptno;
+
+
+
+
+
+
+
+
+
+
+
+
