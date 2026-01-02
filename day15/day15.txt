@@ -40,7 +40,32 @@ select course_name from courses where fee
 
 
 6) Show which course have highest course fee
+select * from courses where fee=(select max(fee) from courses);
+
 7) Show which course have lowest course fee
+select * from courses where fee=(select min(fee) from courses);
+
 8) Students living in same city as “Ramesh”
+select * from students where 
+  city=(select city from students where student_name='ramesh');
+
 9) Courses cheaper than Python course
+select * from courses where fee <(select 
+   fee from courses where course_name='python');
+
 10) Show students who joined a course after 1 Feb 2024
+select * from student where student_id in (select 
+student_id from enrollments where enroll_date>'2024-02-01');
+
+Find employees earning more than the lowest 
+salary in department 30.
+select * from emp where sal > any(select sal from emp where deptno=30);
+
+ Find employees earning more than all salaries in department 20
+select * from emp where sal > all(select sal from emp where deptno=20);
+
+
+select ename,sal,deptno, (select avg(sal) from emp where deptno=e.deptno) as avg from emp as e;
+
+select avg(sal) from emp where deptno=20;
+select avg(sal) from emp where deptno=30;
